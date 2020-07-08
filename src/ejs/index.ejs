@@ -7,19 +7,14 @@ const param = {
 <%- include(`${param.path}@include/_header`, {param: param}) %>
 <body>
   <main class="main" id="main">
-    <%- example.title %>
-    <h1 data-test="2010">テスト</h1>
-    <h1 data-test="2011">テスト</h1>
-    <h1 data-test="2012">テスト</h1>
-    <h1 data-test="2013">テスト</h1>
-    <h1 data-test="2011">テスト</h1>
-    <h1 data-test="2010">テスト</h1>
-    <h1 data-test="2010">テスト</h1>
-    <h1 data-test="2015">テスト</h1>
-    <h1 data-test="2018">テスト</h1>
-    <h1 data-test="2019">テスト</h1>
-    <h1 data-test="2020">テスト</h1>
-    <h1 data-test="2014">テスト</h1>
+
+    <div class="rotate" id="rotate">
+      <% for (let i = 1; i <= 24; i++) { %>
+      <% const index = String(i).padStart(2,'0') %>
+      <figure class="rotate--image" style="background-image: url(/assets/img/rotate/car-<%- index %>.png)"></figure>
+      <% } %>
+    </div>
+
   </main>
 </body>
 <%- include(`${param.path}@include/_footer`, {param: param}) %>

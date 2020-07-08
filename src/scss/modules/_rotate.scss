@@ -1,0 +1,27 @@
+.rotate {
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+	position: relative;
+	cursor: grab;
+	&.is-press {
+		cursor: grabbing;
+	}
+	&::before {
+		content: '';
+		display: block;
+		padding-top: percentage(705/1000);
+	}
+	&--image {
+		display: none;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center center;
+	}
+}
