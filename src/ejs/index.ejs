@@ -1,0 +1,25 @@
+<%
+const param = {
+  title: 'TOP',
+  path: './'
+}
+%>
+<%- include(`${param.path}@include/_header`, {param: param}) %>
+<body>
+  <main class="main" id="main">
+    <%- example.title %>
+    <h1 data-test="2010">テスト</h1>
+    <h1 data-test="2011">テスト</h1>
+    <h1 data-test="2012">テスト</h1>
+    <h1 data-test="2013">テスト</h1>
+    <h1 data-test="2011">テスト</h1>
+    <h1 data-test="2010">テスト</h1>
+    <h1 data-test="2010">テスト</h1>
+    <h1 data-test="2015">テスト</h1>
+    <h1 data-test="2018">テスト</h1>
+    <h1 data-test="2019">テスト</h1>
+    <h1 data-test="2020">テスト</h1>
+    <h1 data-test="2014">テスト</h1>
+  </main>
+</body>
+<%- include(`${param.path}@include/_footer`, {param: param}) %>

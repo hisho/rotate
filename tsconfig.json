@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "downlevelIteration": true,
+    "target": "es5",
+    "incremental": true,
+    "jsx": "react",
+    "module": "esnext",
+    "tsBuildInfoFile": "./.tsconfig.tsbuildinfo",
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "dom",
+      "es2020",
+      "dom.iterable"
+    ],
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true
+  }
+}

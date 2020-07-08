@@ -1,0 +1,183 @@
+/*
+  すべてのpadding,margin,borderをnoneに
+  font-weight,font-size,font-family,letter-spacing,word-wrapを親要素から引き継ぐ
+*/
+* {
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  word-wrap: inherit;
+  border: none;
+}
+
+
+/*
+  全ての要素のbox-sizingをborder-boxにする。
+*/
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+/*
+  初期設定
+  font-sizeは100%以外だとユーザビリティを損なう為100%必須
+*/
+html {
+  overflow-x: hidden;
+  line-height: 1;
+  letter-spacing: 0;
+  //英単語を改行するように変更
+  word-break: break-all;
+  //文字詰め
+  font-feature-settings: 'palt';
+  //モバイル端末で横にした時にテキスト自動拡大をさせない
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  //フォントのアンチエイリアス
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  //overflow-x: hidden;
+  text-align: left;
+}
+
+/*
+  aタグをinline要素で使うことが無いので、blockにする。
+*/
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+//a[href^='tel:'] {
+//  @media (hover:hover) {
+//    pointer-events: none;
+//  }
+//}
+/*
+  aタグをクリックできないので、aの中のobjectタグをpointer-eventsを切る
+*/
+a object {
+  pointer-events: none;
+}
+
+img {
+  width: 100%;
+}
+
+svg {
+  overflow: hidden;
+}
+
+img, svg, video, canvas {
+  height: auto;
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  max-width: 100%;
+}
+
+//ul,olではlist-styleを表示しない。
+ul[class],
+ol[class] {
+  list-style-type: none;
+}
+
+//IE対策
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+address {
+  font-style: normal;
+}
+
+/*
+  Formのリセット
+*/
+//16px以下だとスマホで拡大されるので拡大されないように
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-size: 16px;
+}
+
+input {
+  border-radius: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+input,
+button,
+select,
+textarea {
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+//HTMLのdisabled要素のcursorを初期値に戻す
+[disabled] {
+  cursor: default;
+}
+
+//HTMLのhidden属性を表示させない
+[hidden] {
+  display: none !important;
+}
+
+//端末の設定でトランジションとアニメーションを切っている人にはアニメーションとトランジションさせない
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+//vueのマスタッシュを表示しない
+[v-cloak] {
+  visibility: hidden;
+}
+
+//mouseとtouchではoutlineを表示しない
+[data-whatinput='mouse'] *:focus,
+[data-whatinput='touch'] *:focus {
+  outline: none;
+}
